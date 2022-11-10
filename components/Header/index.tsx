@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <HeaderContainer>
             <div>
-                <Image src="/images/logo.png" alt="" width={527} height={107}/>
+                <Image src="/images/logo.png" alt="" width={400} height={80}/>
             </div>
         </HeaderContainer>
     )
