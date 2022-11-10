@@ -1,10 +1,30 @@
 import { GlobalStyles } from "../styles/global";
 
 import { Content, TitleContent } from '../styles/app'
-import { GetStaticProps } from "next";
+
+import { GetServerSideProps } from "next";
+
 import Card from "../components/Card";
 
-export default function Home() {
+/* interface ElementProps {
+
+} */
+
+export interface LastOrders {
+  data: {
+    protocol?: string;
+    apresentante?: string
+    tipo?: string;
+    imagem?: string;
+    entrada?: number
+    vencimento?: number;
+  }
+}
+
+export default function Home({ data }: any) {
+
+  console.log(data)
+
   return (
     <>
 
@@ -18,33 +38,28 @@ export default function Home() {
           <span> | Últimos pedidos</span>
         </TitleContent>
 
-        <Card />
-        <Card />
-        <Card />
+
+        {data.map((info: any) => (
+          <Card data={info} />
+        ))}
+
+
       </Content>
     </>
   )
 }
 
-/* export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 
   // categorys
-  const response = await fetch(`https://api.nytimes.com/svc/news/v3/content/section-list.json?q=everything&api-key=${process.env.API_KEY}`)
+  const response = await fetch(`http://localhost:5000/data`)
   const data = await response.json()
 
-  // news
-  const responseNews = await fetch(`https://api.nytimes.com/svc/news/v3/content/nyt/all.json?q=everything&api-key=${process.env.API_KEY}`)
-  const dataNews = await responseNews.json()
-
   console.log(data)
-  console.log(dataNews)
 
   return {
     props: {
-      category: data,
-      newsHome: dataNews
+      data
     },
-
-    revalidate: 3600
   }
-} */
+}

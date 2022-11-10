@@ -13,6 +13,12 @@ export const CardContent = styled.div`
     padding: 0.6rem;
     border-bottom: 1px solid #000;
     border-radius: 5px;
+    cursor: pointer;
+
+    :hover {
+        background-color: #D9D9D9;
+        transition: 0.7s;
+    }
 
     img {
         width: 80px;

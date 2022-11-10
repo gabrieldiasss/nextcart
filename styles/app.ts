@@ -10,19 +10,19 @@ align-items: center;
 
 export const TitleContent = styled.div`
   display: flex;
-        align-items: center;
+    align-items: center;
 
 
-        h1 {
-            font-family: Nunito Sans;
-            font-weight: 700;
-            color: #fff;
-        }
+    h1 {
+        font-family: Nunito Sans;
+        font-weight: 700;
+        color: #fff;
+    }
 
-        span {
-            font-family: Nunito Sans;
-            font-weight: 200;
-            color: #fff;
-            margin-left: 13px;
-        }
+    span {
+        font-family: Nunito Sans;
+        font-weight: 200;
+        color: #fff;
+        margin-left: 13px;
+    }
 `
