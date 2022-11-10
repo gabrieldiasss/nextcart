@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
     margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
 `
 
 export const CardContent = styled.div`
@@ -38,4 +43,31 @@ export const CardContent = styled.div`
     div {
         display: block;
     }
+`
+
+export const InfosAdd = styled.div`
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    padding: 0 0 0 0;
+
+    strong {
+            font-family: Inter;
+            background-color: var(--green);
+            padding: 0.6rem;
+            border-radius: 5px;
+        }
+
+
+    div {
+        padding: 1rem;
+
+       
+        p {
+            font-family: Inter;
+            font-weight: 300;
+        }
+    }
+
+    
 `

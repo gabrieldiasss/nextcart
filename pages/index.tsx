@@ -10,18 +10,20 @@ import Card from "../components/Card";
 
 } */
 
-export interface LastOrders {
-  data: {
-    protocol?: string;
-    apresentante?: string
-    tipo?: string;
-    imagem?: string;
-    entrada?: number
-    vencimento?: number;
-  }
+export interface Orders {
+  protocolo?: string;
+  apresentante?: string
+  tipo?: string;
+  imagem?: string;
+  entrada?: any;
+  vencimento?: any;
 }
 
-export default function Home({ data }: any) {
+export interface LastOrders {
+  data: Orders[];
+}
+
+export default function Home({ data }: LastOrders) {
 
   console.log(data)
 
@@ -39,10 +41,9 @@ export default function Home({ data }: any) {
         </TitleContent>
 
 
-        {data.map((info: any) => (
-          <Card data={info} />
+        {data.map((info: Orders, key) => (
+          <Card data={info} key={key} />
         ))}
-
 
       </Content>
     </>
