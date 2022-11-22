@@ -4,11 +4,12 @@ import { GetServerSideProps } from "next";
 
 import Card from "../components/Card";
 import { LastOrders, Order } from "../interfaces";
+import Head from 'next/head';
 
 export default function Home({ data }: LastOrders) {
 
-   data.sort((a, b) => {
-    if( a.vencimento < b.vencimento) {
+  data.sort((a, b) => {
+    if (a.vencimento < b.vencimento) {
       return -1
     } else {
       return 1
@@ -17,6 +18,12 @@ export default function Home({ data }: LastOrders) {
 
   return (
     <Content>
+
+      <Head>
+        <title>NextCart</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <TitleContent>
         <h1>
           Pedidos
