@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 export const Content = styled.main`
-    margin-top: 2rem;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
 
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const TitleContent = styled.div`
-  display: flex;
+    display: flex;
     align-items: center;
 
+    margin-bottom: 20px;
 
     h1 {
         font-family: Nunito Sans;

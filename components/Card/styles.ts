@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
-    margin-top: 1rem;
-
     display: flex;
     align-items: center;
 
     gap: 20px;
+
+    position: relative;
+
+    @media(max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const CardContent = styled.div`
@@ -15,10 +20,21 @@ export const CardContent = styled.div`
     background-color: #fff;
     max-width: 500px;
     min-width: 500px;
-    padding: 0.6rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid #000;
-    border-radius: 5px;
     cursor: pointer;
+
+    @media(max-width: 500px) {
+        width: 90%;
+        max-width: 400px;
+        min-width: 400px;
+        margin: 0 auto;
+    }
+
+    @media(max-width: 390px) {
+        max-width: 300px;
+        min-width: 300px;
+    }
 
     :hover {
         background-color: #D9D9D9;
@@ -37,37 +53,15 @@ export const CardContent = styled.div`
     } 
 
     p {
+        margin-top: 4px;
         font-family: Inter;
     }
 
     div {
         display: block;
-    }
-`
-
-export const InfosAdd = styled.div`
-    background-color: #fff;
-    border-radius: 5px;
-    transition: 0.5s;
-    padding: 0 0 0 0;
-
-    strong {
-            font-family: Inter;
-            background-color: var(--green);
-            padding: 0.6rem;
-            border-radius: 5px;
-        }
-
-
-    div {
-        padding: 1rem;
-
-       
-        p {
-            font-family: Inter;
-            font-weight: 300;
-        }
+        
     }
 
-    
+
 `
+

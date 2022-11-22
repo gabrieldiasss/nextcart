@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <HeaderContainer>
             <div>
-                <Image src="/images/logo.png" alt="" width={400} height={80}/>
+                <Image src="/images/logo.png" alt="Logo Next Cart"  className={'image'} width={400} height={80}/>
             </div>
         </HeaderContainer>
     )

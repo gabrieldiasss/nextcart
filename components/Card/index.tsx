@@ -1,15 +1,19 @@
-
+import moment from 'moment'
+import Image from 'next/image';
 import { useState } from 'react';
-import { Orders } from '../../pages';
-import { CardContainer, CardContent, InfosAdd } from './styles'
+import { Order } from '../../interfaces';
+import { AdditionnalInformationCard } from '../AdditionnalInformationCard';
+import { CardContainer, CardContent } from './styles'
 
 interface CardProps {
-    data: Orders;
+    data: Order;
 }
 
 export default function Card({ data }: CardProps) {
 
     const [isShow, setIsShow] = useState(false)
+
+    const src = `${data.imagem}`
 
     return (
         <CardContainer>
@@ -19,28 +23,17 @@ export default function Card({ data }: CardProps) {
                 onMouseLeave={() => setIsShow(false)}
             >
 
-                <img src={data.imagem} alt="" />
+                <Image width={80} height={80} src={src} alt="" />
 
                 <div>
-                    <strong>{data.protocolo}</strong>
-                    <p>Data de entrada: {new Intl.DateTimeFormat('pt-br').format(
-                        new Date(data.entrada)
-                    )}</p>
-                    <p>Data de vencimento: {new Intl.DateTimeFormat('pt-br').format(
-                        new Date(data?.vencimento)
-                    )}</p>
+                    <strong>Protocolo: {data.protocolo}</strong>
+                    <p>Data de entrada: {moment(data.entrada).format('lll')}</p>
+                    <p>Data de vencimento: {moment(data.vencimento).format('lll')}</p>
                 </div>
             </CardContent>
 
             {isShow && (
-
-                <InfosAdd>
-                    <strong>Informações adicionais</strong>
-                    <div>
-                        <p>{data.apresentante}</p>
-                        <p>{data.tipo}</p>
-                    </div>
-                </InfosAdd>
+                <AdditionnalInformationCard data={data} />
             )}
 
         </CardContainer>
