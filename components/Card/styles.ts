@@ -46,6 +46,8 @@ export const CardContent = styled.div`
         height: 80px;
         border-radius: 50%;
         margin-right: 1rem;
+        background-color: var(--green);
+        border: 5px solid var(--blue-500);
     }
 
     strong {
