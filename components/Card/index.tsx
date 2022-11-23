@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Order } from '../../interfaces';
 import { AdditionnalInformationCard } from '../AdditionnalInformationCard';
-import { CardContainer, CardContent } from './styles'
+import { CardContainer, CardContent } from './styles';
 
 interface CardProps {
     data: Order;

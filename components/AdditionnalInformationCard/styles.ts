@@ -37,7 +37,6 @@ export const InfosAdd = styled.div`
     div {
         padding: 1rem;
 
-       
         p {
             font-family: Inter;
             font-weight: 300;
