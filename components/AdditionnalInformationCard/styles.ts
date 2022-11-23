@@ -16,7 +16,7 @@ export const InfosAdd = styled.div`
         border: 8px solid #fff;
     }
 
-    @media(max-width: 500px) {
+    @media(max-width: 1024px) {
         margin-bottom: 1rem;
         width: 100%;
         position: static;
@@ -28,11 +28,11 @@ export const InfosAdd = styled.div`
     }
 
     strong {
-            font-family: Inter;
-            background-color: var(--green);
-            padding: 0.6rem;
-            border-radius: 5px 5px 0 0;
-        }
+        font-family: Inter;
+        background-color: var(--green);
+        padding: 0.6rem;
+        border-radius: 5px 5px 0 0;
+    }
 
     div {
         padding: 1rem;

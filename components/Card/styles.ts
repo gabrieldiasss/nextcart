@@ -8,7 +8,7 @@ export const CardContainer = styled.div`
 
     position: relative;
 
-    @media(max-width: 500px) {
+    @media(max-width: 1024px) {
         display: flex;
         flex-direction: column;
     }
