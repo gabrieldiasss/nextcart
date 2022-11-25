@@ -14,6 +14,8 @@ export default function Home({ data }: LastOrders) {
 		}
 	})
 
+	console.log
+
 	return (
 		<Content>
 
@@ -38,10 +40,8 @@ export default function Home({ data }: LastOrders) {
 export const getServerSideProps: GetServerSideProps = async () => {
 
 	// orders
-	const response = await fetch(`http://localhost:3000/api/orders`)
+	const response = await fetch(`https://nextcart-ecru.vercel.app/api/orders`)
 	const data = await response.json()
-
-	console.log(data)
 
 	return {
 		props: {
