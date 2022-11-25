@@ -15,6 +15,14 @@ export default function Card({ data }: CardProps) {
 
     const src = `${data.imagem}`
 
+    const ConvertUnixTimeDateEntrada = new Date(
+        data.entrada * 1000
+    )
+
+    const ConvertUnixTimeDateVencimento = new Date(
+        data.vencimento * 1000
+    )
+
     return (
         <CardContainer>
 
@@ -27,8 +35,8 @@ export default function Card({ data }: CardProps) {
 
                 <div>
                     <strong>Protocolo: {data.protocolo}</strong>
-                    <p>Data de entrada: {moment(data.entrada).format('lll')}</p>
-                    <p>Data de vencimento: {moment(data.vencimento).format('lll')}</p>
+                    <p>Data de entrada: {moment(ConvertUnixTimeDateEntrada).format('lll')}</p>
+                    <p>Data de vencimento: {moment(ConvertUnixTimeDateVencimento).format('lll')}</p>
                 </div>
             </CardContent>
 

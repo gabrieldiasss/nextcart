@@ -7,45 +7,45 @@ import Head from 'next/head';
 export default function Home({ data }: LastOrders) {
 
 	data.sort((a, b) => {
-	if (a.vencimento < b.vencimento) {
-		return -1
-	} else {
-		return 1
-	}
+		if (a.vencimento < b.vencimento) {
+			return -1
+		} else {
+			return 1
+		}
 	})
 
 	return (
-	<Content>
+		<Content>
 
-		<Head>
-			<title>NextCart</title>
-			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		</Head>
+			<Head>
+				<title>NextCart</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
 
-		<TitleContent>
-			<h1>Pedidos</h1>
-			<span> | Últimos pedidos</span>
-		</TitleContent>
+			<TitleContent>
+				<h1>Pedidos</h1>
+				<span> | Últimos pedidos</span>
+			</TitleContent>
 
-		{data.map((info: Order, key) => (
-			<Card data={info} key={key} />
-		))}
+			{data.map((info: Order, key) => (
+				<Card data={info} key={key} />
+			))}
 
-	</Content>
+		</Content>
 	)
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
 
-  // orders
+	// orders
 	const response = await fetch(`http://localhost:3000/api/orders`)
 	const data = await response.json()
 
 	console.log(data)
 
 	return {
-	props: {
-		data
-	},
+		props: {
+			data
+		},
 	}
 }
